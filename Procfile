@@ -1,0 +1,1 @@
+worker: bundle exec sidekiq -r ./app/test_worker.rb
