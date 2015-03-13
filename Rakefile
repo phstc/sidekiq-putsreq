@@ -1,4 +1,4 @@
-require_relative 'app/test_worker'
+require_relative 'test_worker'
 
 task :populate do
   started_at = Time.now
