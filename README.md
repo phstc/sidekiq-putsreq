@@ -1,6 +1,5 @@
 ## Installation instructions
 
-
 ```sh
 git clone git@github.com:phstc/sidekiq-putsreq.git
 
