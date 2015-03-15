@@ -1,12 +1,17 @@
 require_relative 'test_worker'
 
-task :populate do
+task :populate, [:size] do |t, args|
+  size = (args[:size] || 1_000).to_i
+
+  puts "Preparing to send #{size} jobs"
+
   started_at = Time.now
-  1000.times do |index|
+
+  size.times do |index|
     TestWorker.perform_async(index)
   end
 
-  puts "Total time: #{(Time.now - started_at) * 1000}ms"
+  puts "Total time: #{(Time.now - started_at) * 1_000}ms"
 end
 
 task :default => [:populate]
